@@ -68,3 +68,8 @@ class CarrosController < ApplicationController
       params.expect(carro: [ :modelo, :matricula, :color ])
     end
 end
+
+def index 
+  carro = Carro.all
+  render json: carro
+end

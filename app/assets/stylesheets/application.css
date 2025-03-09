@@ -8,5 +8,16 @@
  *
  * Consider organizing styles into separate files for maintainability.
  */
+header {
+    height: 100px;
+    width: auto;
+    text-align: center;
+    margin-top: 100px;
+}
  
-
+section {
+    width: 400px;
+    padding: 20px;
+    text-align: center;
+    margin: 0 auto;
+}

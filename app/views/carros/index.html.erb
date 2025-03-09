@@ -1,16 +1,29 @@
 <p style="color: green"><%= notice %></p>
 
 <% content_for :title, "Carros" %>
+<section>
+  <h1>Carros</h1>
+  <div id="carros">
+    <% @carros.each do |carro| %>
+      <%= render carro %>
+      <button>
+        <p>
+          <%= link_to "Show this carro", carro %>
+        </p>
+      </button>
+    <% end %>
+  </div>  
 
-<h1>Carros</h1>
+  <br>  
 
-<div id="carros">
-  <% @carros.each do |carro| %>
-    <%= render carro %>
-    <p>
-      <%= link_to "Show this carro", carro %>
-    </p>
-  <% end %>
-</div>
+  <button>
+    <%= link_to "New carro", new_carro_path %>s
+  </button>
+  <br>  
 
-<%= link_to "New carro", new_carro_path %>
+
+  <button>
+      <%= link_to "lista de todos los carros", mostrar_carro_path%>
+  </button>     
+
+</section
