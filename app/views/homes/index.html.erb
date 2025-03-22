@@ -1,0 +1,15 @@
+<p style="color: green"><%= notice %></p>
+
+<% content_for :title, "LA TERRAZA DEL PRI" %>
+
+<h1>Crear un nuevo pedido</h1>
+
+<div id="homes">
+  <% @homes.each do |home| %>
+    <%= render home %>
+    <p>
+      <%= link_to "Mirar este pedido", home %>
+    </p>
+  <% end %>
+</div>
+

@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @home %>
+
+<div>
+  <%= link_to "Editar este pedido", edit_home_path(@home) %> |
+  <%= link_to "Volver a la pagina principal", homes_path %>
+
+  <%= button_to "Borrar este pedido", @home, method: :delete %>
+</div>

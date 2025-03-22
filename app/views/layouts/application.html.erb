@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title><%= content_for(:title) || "Appsena" %></title>
+    <title><%= content_for(:title) || "Pedido" %></title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="mobile-web-app-capable" content="yes">
@@ -25,19 +25,30 @@
   <body>
     <main>
         <header>
-          <img src="<%= asset_path 'Minimalist logo.webp' %>" class ="logo" >
-          <h1>Informacion y Entrada de un nuevo vehiculo.</h1>
+          <h1>LA TERRAZA DEL PRI</h1>
         </header>
-        <nav></nav>
-        <aside>
-          <button type="button" class="btn btn-outline-info">
-            <%= link_to "Nuevo carro", new_carro_path %>
-          </button> 
+        <nav>
+          <h2>¡Explosión de sabor en cada bocado! 🌮🍔</h2>
+        </nav>
          <aside>
-      <section>
-          <%=yield %>
-           <img src="<%= asset_path 'Cars Icy Roads GIF by Digg.gif' %>" alt="Carro deslizándose en la carretera" class="gif">
-      </section>
+              <%= link_to "Nuevo Pedido", new_home_path %> 
+            </aside>
+          <section>
+            <%=yield %>
+          </section>
+      <footer>
+        <strong>
+        Donde nos puedes encontrar: Calle 56#8-22 ciudadela metropolitana - soledad<br>
+        Siguenos en nuestras redes sociales para siempre estar atento a cualquier novedad<br>
+        <a href="https://www.instagram.com/Laterrazadelpri/" target="_blank" rel="noopener noreferrer">
+          Síguenos en Instagram
+        </a><br>
+          <a href="https://www.tiktok.com/@laterrazadelpri?_t=8iQXZMitniI&_r=1" target="_blank" rel="noopener noreferrer">
+            Síguenos en TikTok
+          </a><br>
+          Nuestra linea de contacto: +57 311 3678033
+        </strong>
+      </footer>
     </main>
   </body>
 </html>

@@ -1,0 +1,12 @@
+<% content_for :title, "Editar pedidos" %>
+
+<h1>Editar un pedido</h1>
+
+<%= render "form", home: @home %>
+
+<br>
+
+<div>
+  <%= link_to "Mirar este pedido", @home %> |
+  <%= link_to "Volver a la pagina principal", homes_path %>
+</div>
