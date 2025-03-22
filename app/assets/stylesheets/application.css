@@ -8,16 +8,63 @@
  *
  * Consider organizing styles into separate files for maintainability.
  */
-header {
-    height: 100px;
-    width: auto;
-    text-align: center;
-    margin-top: 100px;
-}
+
+    main{
+        height: auto;
+        width: auto;    
+
+        header {
+            border: 1px solid black;
+            height: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: center; 
+            gap: 15px; /* Espacio entre la imagen y el texto */
+            text-align: left; /* Ya no necesitas centrar el texto */
+            margin-top: 50px; /* Reducido para que no haya demasiado espacio arriba */
+            font-style: oblique;
+            color: #3f48d1;
+            
+
+            .logo{  
+                width: 100px;
+                height: auto;
+                display: block;
+                border-radius: 50%;
+            }
+
+        }
+
+        aside, section {
+            display: inline-block;
+            vertical-align: top;
+            white-space: normal;
+        }
+
+        aside {
+            border: 1px solid black; 
+            height: 600px;
+            width: 200px;
+
+        }
+
+        section {
+            border: 1px solid black;
+            height: auto;
+            width: 1100px;
+            text-align: center;
+
+            .gif {
+                width: 300px;
+                height: auto;
+                display: block;
+                justify-content: center;
+                align-items: flex-start;
+                margin-top: -200px;
+            }
+
+        }
+
+    }
+
  
-section {
-    width: 400px;
-    padding: 20px;
-    text-align: center;
-    margin: 0 auto;
-}

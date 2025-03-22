@@ -1,0 +1,12 @@
+<% content_for :title, "Editing celular" %>
+
+<h1>Editing celular</h1>
+
+<%= render "form", celular: @celular %>
+
+<br>
+
+<div>
+  <%= link_to "Show this celular", @celular %> |
+  <%= link_to "Back to celulars", celulars_path %>
+</div>

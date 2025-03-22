@@ -1,0 +1,2 @@
+class Celular < ApplicationRecord
+end

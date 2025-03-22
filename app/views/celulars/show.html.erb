@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @celular %>
+
+<div>
+  <%= link_to "Edit this celular", edit_celular_path(@celular) %> |
+  <%= link_to "Back to celulars", celulars_path %>
+
+  <%= button_to "Destroy this celular", @celular, method: :delete %>
+</div>

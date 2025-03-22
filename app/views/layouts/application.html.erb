@@ -24,10 +24,20 @@
 
   <body>
     <main>
-      <header>
-        <h1>Informacion y Entrada de un nuevo vehiculo.</h1>
-      </header>
+        <header>
+          <img src="<%= asset_path 'Minimalist logo.webp' %>" class ="logo" >
+          <h1>Informacion y Entrada de un nuevo vehiculo.</h1>
+        </header>
+        <nav></nav>
+        <aside>
+          <button type="button" class="btn btn-outline-info">
+            <%= link_to "Nuevo carro", new_carro_path %>
+          </button> 
+         <aside>
+      <section>
+          <%=yield %>
+           <img src="<%= asset_path 'Cars Icy Roads GIF by Digg.gif' %>" alt="Carro deslizándose en la carretera" class="gif">
+      </section>
     </main>
-    <%= yield %>
   </body>
 </html>
