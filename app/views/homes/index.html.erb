@@ -2,13 +2,13 @@
 
 <% content_for :title, "LA TERRAZA DEL PRI" %>
 
-<h1>Crear un nuevo pedido</h1>
+<h1>Pedidos</h1>
 
 <div id="homes">
-  <% @homes.each do |home| %>
-    <%= render home %>
+  <% @home.each do |home| %>
+    <%= render partial: 'home', locals: { home: home } %> 
     <p>
-      <%= link_to "Mirar este pedido", home %>
+      <%= link_to "Mirar este pedido", home , class: 'btn btn-secondary'%>
     </p>
   <% end %>
 </div>

@@ -1,2 +1,0 @@
-class Celular < ApplicationRecord
-end

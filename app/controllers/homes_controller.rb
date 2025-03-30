@@ -1,70 +1,47 @@
-class HomesController < ApplicationController
-  before_action :set_home, only: %i[ show edit update destroy ]
+class HomesController < ApplicationController  
+  def index  
+    @home = Home.all  
+  end  
 
-  # GET /homes or /homes.json
-  def index
-    @homes = Home.all
-  end
+  def show  
+    @home = Home.find(params[:id])  
+  end  
 
-  # GET /homes/1 or /homes/1.json
-  def show
-  end
+  def new  
+    @home = Home.new  
+  end  
 
-  # GET /homes/new
-  def new
-    @home = Home.new
-  end
+  def create  
+    @home = Home.new(home_params)  
+    if @home.save  
+      redirect_to homes_path, notice: 'Se ha Creado Correctamente.'
+    else  
+      render :new  
+    end  
+  end  
 
-  # GET /homes/1/edit
-  def edit
-  end
+  def edit  
+    @home = Home.find(params[:id])  
+  end  
 
-  # POST /homes or /homes.json
-  def create
-    @home = Home.new(home_params)
+  def update  
+    @home = Home.find(params[:id])  
+    if @home.update(home_params)  
+      redirect_to homes_path, notice: 'Se ha Actualizado Correctamente.'
+    else  
+      render :edit  
+    end  
+  end  
 
-    respond_to do |format|
-      if @home.save
-        format.html { redirect_to @home, notice: "Home was successfully created." }
-        format.json { render :show, status: :created, location: @home }
-      else
-        format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @home.errors, status: :unprocessable_entity }
-      end
-    end
-  end
+  def destroy  
+    @home = Home.find(params[:id])  
+    @home.destroy  
+    redirect_to homes_path, notice: 'Se ha Borrado Correctamente.' 
+  end  
 
-  # PATCH/PUT /homes/1 or /homes/1.json
-  def update
-    respond_to do |format|
-      if @home.update(home_params)
-        format.html { redirect_to @home, notice: "Home was successfully updated." }
-        format.json { render :show, status: :ok, location: @home }
-      else
-        format.html { render :edit, status: :unprocessable_entity }
-        format.json { render json: @home.errors, status: :unprocessable_entity }
-      end
-    end
-  end
+  private  
 
-  # DELETE /homes/1 or /homes/1.json
-  def destroy
-    @home.destroy!
-
-    respond_to do |format|
-      format.html { redirect_to homes_path, status: :see_other, notice: "Home was successfully destroyed." }
-      format.json { head :no_content }
-    end
-  end
-
-  private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_home
-      @home = Home.find(params.expect(:id))
-    end
-
-    # Only allow a list of trusted parameters through.
-    def home_params
-      params.expect(home: [ :nombre, :desc, :direccion ])
-    end
-end
+  def home_params  
+    params.require(:home).permit(:nombre, :desc, :direccion)  
+  end  
+end  
